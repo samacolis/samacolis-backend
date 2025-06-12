@@ -1,48 +1,52 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// 1️⃣ IMPORTER ton client Axios centralisé (au lieu de axios directement)
 import api from '../services/api';
+import { toast } from 'react-toastify';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const resp = await api.post('token/', { username, password });
-      localStorage.setItem('access_token', resp.data.access);
+      // 2️⃣ UTILISER api.post et non axios.post avec une URL en dur
+      const response = await api.post('/token/', { username, password });
+      localStorage.setItem('access_token', response.data.access);
+      localStorage.setItem('refresh_token', response.data.refresh);
+      toast.success('Connecté !');
       navigate('/clients');
-    } catch {
-      setError('Échec de la connexion');
+    } catch (err) {
+      toast.error('Identifiants invalides');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Connexion</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div>
-        <label>Utilisateur</label>
-        <input
-          type="text"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Mot de passe</label>
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit">Se connecter</button>
-    </form>
+    <div className="login-container">
+      <h1>Connexion</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nom d’utilisateur
+          <input
+            type="text"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Mot de passe
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
   );
 }
-

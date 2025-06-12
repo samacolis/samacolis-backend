@@ -1,15 +1,13 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/',
+  baseURL: process.env.REACT_APP_API_URL,   // ← utiliser l'env var
+  headers: { 'Content-Type': 'application/json' }
 });
 
-api.interceptors.request.use(config => {
-  const token = localStorage.getItem('access_token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+const token = localStorage.getItem('access_token');
+if (token) {
+  api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
 
 export default api;

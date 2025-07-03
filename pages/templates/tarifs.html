@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Tarifs - SamaColis{% endblock %}
+
+{% block content %}
+<section class="tarifs-section">
+    <h1>Nos Tarifs</h1>
+    <p>Comparez nos offres selon le mode d'envoi et la plateforme utilisée.</p>
+
+    <!-- Envoi Maritime -->
+    <div class="tarif-block">
+        <h2>🚢 Envoi Maritime</h2>
+        <p>Pour vos envois volumineux à prix économique.</p>
+        <table class="tarifs-table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Prix / kg</th>
+                    <th>Frais fixes</th>
+                    <th>Délai estimé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sénégal</td>
+                    <td>2,50 €</td>
+                    <td>10 €</td>
+                    <td>20–25 jours</td>
+                </tr>
+                <tr>
+                    <td>Côte d’Ivoire</td>
+                    <td>2,80 €</td>
+                    <td>12 €</td>
+                    <td>20–25 jours</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Envoi Aérien -->
+    <div class="tarif-block">
+        <h2>✈️ Envoi Aérien</h2>
+        <p>Pour un envoi rapide et sécurisé.</p>
+        <table class="tarifs-table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Prix / kg</th>
+                    <th>Frais fixes</th>
+                    <th>Délai estimé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sénégal</td>
+                    <td>12,00 €</td>
+                    <td>15 €</td>
+                    <td>7–10 jours</td>
+                </tr>
+                <tr>
+                    <td>Côte d’Ivoire</td>
+                    <td>13,00 €</td>
+                    <td>15 €</td>
+                    <td>7–10 jours</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Achats E-commerce -->
+    <div class="tarif-block">
+        <h2>🛍️ Réexpédition d'Achats en Ligne</h2>
+        <p>Commandez sur vos sites préférés (Amazon, Vinted, Shein, LeBonCoin…) et recevez vos colis via SamaColis.</p>
+
+        <div class="ecommerce-logos">
+            <a href="https://www.amazon.fr" target="_blank">
+                <img src="{% static 'images/amazon.png' %}" alt="Amazon" width="100">
+            </a>
+            <a href="https://www.leboncoin.fr" target="_blank">
+                <img src="{% static 'images/leboncoin.jpg' %}" alt="LeBonCoin" width="100">
+            </a>
+            <a href="https://www.vinted.fr" target="_blank">
+                <img src="{% static 'images/vinted.png' %}" alt="Vinted" width="100">
+            </a>
+            <a href="https://www.shein.com" target="_blank">
+                <img src="{% static 'images/shein.png' %}" alt="Shein" width="100">
+            </a>
+        </div>
+
+        <table class="tarifs-table">
+            <thead>
+                <tr>
+                    <th>Plateforme</th>
+                    <th>Réception</th>
+                    <th>Stockage</th>
+                    <th>Réexpédition</th>
+                    <th>Délai estimé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Toutes</td>
+                    <td>Gratuite*</td>
+                    <td>7 jours</td>
+                    <td>Tarif maritime ou aérien</td>
+                    <td>7 à 45 jours</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">*Réception gratuite si réexpédition dans les 7 jours suivant la livraison à l'entrepôt.</p>
+    </div>
+
+   
+<!-- Section Exemples de colis -->
+<div class="tarif-block exemples-colis">
+    <h2>📦 Exemples de colis et estimation</h2>
+    <p>Voici quelques exemples de colis pour vous aider à estimer vos coûts d’envoi :</p>
+
+    <table class="tarifs-table">
+        <thead>
+            <tr>
+                <th>Type de colis</th>
+                <th>Poids estimé</th>
+                <th>Mode</th>
+                <th>Prix estimé</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1 paire de baskets + vêtements</td>
+                <td>3 kg</td>
+                <td>🚢</td>
+                <td>2,50 x 3 + 10 € = <strong>17,50 €</strong></td>
+            </tr>
+            <tr>
+                <td>Ordinateur portable</td>
+                <td>2,5 kg</td>
+                <td>✈️</td>
+                <td>12 x 2,5 + 15 € = <strong>45 €</strong></td>
+            </tr>
+            <tr>
+                <td>Téléphone + accessoires</td>
+                <td>1 kg</td>
+                <td>✈️</td>
+                <td>12 + 15 € = <strong>27 €</strong></td>
+            </tr>
+            <tr>
+                <td>Petits colis Vinted x3</td>
+                <td>6 kg</td>
+                <td>🚢</td>
+                <td>2,5 x 6 + 10 € = <strong>25 €</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+ <!-- Infos complémentaires -->
+    <div class="note">
+        <p>📌 Les frais fixes incluent la réception, la vérification et la consolidation des colis.</p>
+        <p>📏 Pour les objets volumineux ou spécifiques (meubles, électroménagers…), <a href="/contact/">demandez un devis personnalisé</a>.</p>
+    </div>
+
+   
+ <div class="cta">
+        <a href="/contact/" class="cta-button">Demander un devis</a>
+    </div>
+</section>
+{% endblock %}
+
+
+

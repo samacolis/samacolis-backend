@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import api from '../../services/api';
 // ─────────────── Ajout pour toast
 import { toast } from 'react-toastify';
 

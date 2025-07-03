@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}  <!-- ✅ Obligatoire avant d’utiliser static -->
+
+{% block title %}Accueil - Samacolis{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Expédiez vos colis vers l’Afrique en toute confiance</h1>
+  <p>Un service fiable, simple et pensé pour la diaspora.</p>
+  <a href="/services/" class="cta-button">Voir nos services</a>
+</section>
+
+<section class="features">
+  <h2>Pourquoi choisir Samacolis ?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <img src="{% static 'images/secure.png' %}" alt="Sécurité">
+      <h3>Fiabilité</h3>
+      <p>Vos colis sont traités avec soin et arrivent à destination.</p>
+    </div>
+    <div class="feature-card">
+      <img src="{% static 'images/shopping.png' %}" alt="Achat assisté">
+      <h3>Achat assisté</h3>
+      <p>Commandez en ligne, et nous réexpédions vos colis vers l’Afrique.</p>
+    </div>
+    <div class="feature-card">
+      <img src="{% static 'images/container.png' %}" alt="Conteneur">
+      <h3>Envoi maritime</h3>
+      <p>Un conteneur par mois pour les envois volumineux à petit prix.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Prêt à envoyer votre premier colis ?</h2>
+  <a href="/contact/" class="cta-button">Contactez-nous</a>
+</section>
+{% endblock %}

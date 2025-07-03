@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Samacolis{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="logo">Samacolis</div>
+  <nav class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services/">Services</a>
+    <a href="/tarifs/">Tarifs</a>
+    <a href="/fonctionnement/">Fonctionnement</a>
+    <a href="/about/">À propos</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Samacolis. Tous droits réserv

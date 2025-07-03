@@ -1,7 +1,5 @@
 from django.contrib import admin
-# 1️⃣ Import de include
 from django.urls import path, include
-# 2️⃣ Import des vues JWT
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -17,4 +15,8 @@ urlpatterns = [
     # JWT : obtention et rafraîchissement de token
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # Pages du site (accueil, fonctionnement, contact, etc.)
+    path('', include('pages.urls')),  # ⬅️ C'est cette ligne qui rend /fonctionnement/ accessible
 ]
+

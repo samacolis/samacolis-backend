@@ -1,0 +1,72 @@
+🎯 Pitch technique pour développeur
+🚚 SamaColis — Plateforme de réexpédition pensée pour la diaspora africaine
+Objectif du site :
+Permettre aux utilisateurs (principalement de la diaspora africaine) d’acheter en ligne depuis des sites européens (Amazon, Shein, LeBonCoin, etc.), de faire livrer leurs colis chez SamaColis, puis de les réexpédier en Afrique (ex. : Sénégal, Côte d’Ivoire) via fret maritime ou aérien.
+
+🧱 Fonctionnalités principales attendues sur le site :
+👤 Espace Client
+Authentification (inscription, connexion, mot de passe oublié)
+
+Tableau de bord utilisateur
+
+Liste de colis reçus
+
+Statut du colis (reçu, prêt à l’envoi, en transit, livré)
+
+Demande de devis pour groupage ou expédition
+
+📦 Gestion des colis
+Formulaire de déclaration de colis (nom du site, poids estimé, valeur, photo…)
+
+Choix du mode d’expédition (maritime, aérien, express)
+
+Paiement en ligne (Stripe ou Orange Money selon région)
+
+Tracking intégré
+
+💬 Contact & SAV
+Formulaire de contact fonctionnel (email ou ticket)
+
+FAQ intégrée
+
+Numéro WhatsApp cliquable
+
+🛍️ Espace e-commerce / redirection
+Mise en avant de sites e-commerce populaires
+
+Lien de redirection ou intégration API (facultatif pour phase 1)
+
+⚙️ Stack technique souhaitée :
+Front-end
+React ou Next.js (préféré pour SEO & performance)
+
+Tailwind CSS pour un design moderne, responsive
+
+Connexion à une API REST (Django)
+
+Back-end (déjà en cours avec un autre dev)
+Django REST Framework
+
+Base PostgreSQL
+
+API sécurisée pour authentification, gestion colis, users, paiement
+
+🎨 Direction UX/UI
+Identité visuelle jeune, fluide, rassurante
+
+Inspo : ColisExpat, mais avec une touche africaine plus humaine
+
+Charte couleur : vert émeraude (#008056), blanc, gris clair, jaune en accent
+
+🧩 Modules à prévoir (priorité V1)
+Authentification
+
+Dashboard colis
+
+Déclaration colis
+
+Demande devis
+
+Contact / SAV
+
+Paiement (si possible Stripe en premier)

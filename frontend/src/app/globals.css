@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-emerald-custom: #008056;
+  --color-white-custom: #ffffff;
+  --color-light-gray-custom: #f0f0f0; /* Exemple de gris clair */
+  --color-accent-yellow-custom: #FFD700; /* Exemple de jaune accent */
+}
+
+/* Vous pouvez également étendre Tailwind pour ces couleurs dans tailwind.config.js si vous préférez */
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.step {
+  background: #f9f9f9;
+  border-left: 5px solid #004aad;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.step:hover {
+  transform: scale(1.02);
+}
+
+.step-number {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #004aad;
+}
